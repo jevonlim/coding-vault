@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}Update{% endblock %}
+
+{% block content %}
+    <h1>Student Update</h1>
+    <form method="POST">
+        <input name="name" placeholder="Name"><br>
+        <input name="country" placeholder="Country"><br>
+        <input name="city" placeholder="City"><br>
+        <input name="age" placeholder="Age" type="number"><br>
+        <button type="submit">Update</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}Data{% endblock %}
+
+{% block content %}
+    <h1>Student Data</h1>
+
+    <a href="/students/create">
+        <button>Create Student</button>
+    </a>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Country</th>
+            <th>City</th>
+            <th>Age</th>
+            <th>Action</th>
+        </tr>
+
+        {% for student in students %}
+        <tr> 
+            <td> {{ student.name }} </td>
+            <td> {{ student.country }} </td>
+            <td> {{ student.city }} </td>
+            <td> {{ student.age }} </td>
+            <td>
+                <a href="students/update/{{ student._id }}">Edit</a>
+                <form action="students/delete/{{ student._id}}" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

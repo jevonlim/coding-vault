@@ -31,7 +31,10 @@ def my_correlation(x,y):
 
 
 x = [-2,-1,0,1,2]
-y = [0,-5,-10,-20,-30]
+y = [0,5,10,20,30]
+
+correlation = my_correlation(x,y)
 
 print(f"Covariance: {my_covariance(x,y)}")
-print(f"Correlation: {my_correlation(x,y)}")
+print(f"Correlation: {correlation:.2f}")
+print(f"R-SQUARED: {correlation ** 2 * 100:.2f}%")
